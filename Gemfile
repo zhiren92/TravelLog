@@ -37,10 +37,11 @@ gem 'fog'         # required for Amazon S3
 gem 'mini_magick' # for post-upload image processing
 
 group :development do
-gem 'better_errors', '~> 2.0.0'
-gem 'binding_of_caller'
+	gem 'better_errors', '~> 2.0.0'
+	gem 'binding_of_caller'
 end
 
+gem 'quiet_assets'
 # Use unicorn as the app server
 # gem 'unicorn'
 

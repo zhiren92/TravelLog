@@ -7,7 +7,7 @@
 	</div>
 	<div>
 		<%= f.label :time_created%>
-		<%= f.text_field :time_created %>
+		<%= f.time_field :time_created %>
 	</div>
 	<div>
 		<%= f.label :about %>
@@ -23,10 +23,6 @@
 		<div>
 			<%= photo_fields.label :caption %>
 			<%= photo_fields.text_field :caption %>
-		</div>
-		<div>
-			<%= photo_fields.label :time %>
-			<%= photo_fields.text_field :time %>
 		</div>
 	<% end %>
 	
