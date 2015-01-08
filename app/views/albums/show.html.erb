@@ -1,5 +1,5 @@
 <%= @album.name %>
-<%= image_tag @album.image.url(:default) %>
+<%= image_tag @album.photos.first %>
 
 <%= link_to "ALL ALBUMS", albums_path %>
 

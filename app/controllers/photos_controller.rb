@@ -4,6 +4,9 @@ class PhotosController < ApplicationController
 	end
 	def show
 	end
+	def new
+		@photo = Photo.new
+	end
 	def create
 		album = Album.find(params[:album_id])
 		photo = album.photo.create(photo_params)

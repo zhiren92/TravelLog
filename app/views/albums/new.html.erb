@@ -16,8 +16,19 @@
 
 <h3>Add Photos</h3>
 
-	<%= f.file_field :image %>
-	
+<%= f.fields_for :photos_attributes do |photo_fields| %>
+		<div>
+			<%= photo_fields.file_field :image %>
+		</div>
+		<div>
+			<%= photo_fields.label :caption %>
+			<%= photo_fields.text_field :caption %>
+		</div>
+		<div>
+			<%= photo_fields.label :time %>
+			<%= photo_fields.text_field :time %>
+		</div>
+	<% end %>
 	
 
 	<div>

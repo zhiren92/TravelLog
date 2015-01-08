@@ -9,7 +9,7 @@ class AlbumsController < ApplicationController
 		@album = Album.new
 	end
 	def create
-		@album = Album.create(album_params)
+		@album = Album.new(album_params)
 		if @album.save
 			redirect_to albums_path
 		else
@@ -25,6 +25,6 @@ class AlbumsController < ApplicationController
 
 	private
 	def album_params
-		params.require(:album).permit(:name, :time_created, :about, :image)
+		params.require(:album).permit(:name, :time_created, :about, photos_attributes: [:caption, :time, :image])
 	end
 end
