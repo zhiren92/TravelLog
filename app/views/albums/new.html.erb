@@ -1,0 +1,26 @@
+<h1>CREATE A NEW ALBUM</h1>
+
+<%= form_for @album do |f| %>
+	<div>
+		<%= f.label :name%>
+		<%= f.text_field :name %>
+	</div>
+	<div>
+		<%= f.label :time_created%>
+		<%= f.text_field :time_created %>
+	</div>
+	<div>
+		<%= f.label :about %>
+		<%= f.text_area :about  %>
+	</div>
+
+<h3>Add Photos</h3>
+
+	<%= f.file_field :image %>
+	
+	
+
+	<div>
+		<%= f.submit "Create Your Album" %>
+	</div>
+<% end %>

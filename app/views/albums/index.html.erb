@@ -1,0 +1,9 @@
+<h1>This is the Page for all Albums</h1>
+
+<% @albums.each do |album| %>
+	<div>
+		<%= link_to album.name, album_path(album) %>
+	</div>
+<% end %>
+
+<h2><%= link_to "New Album", new_album_path %></h2>
