@@ -6,6 +6,7 @@ class Photo
   mount_uploader :image, PhotoUploader
 
   embedded_in :album
+  
 
  
 end

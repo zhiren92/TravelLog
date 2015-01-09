@@ -7,11 +7,19 @@ class AlbumsController < ApplicationController
 	end
 	def new
 		@album = Album.new
+		# @album = current_user.album
+		@album.photos.build
 	end
 	def create
 		@album = Album.new(album_params)
+		@album.photos.build(photo_params)
+		@album.user = current_user
+		# @album = current_user.albums.new(albums_params)
+
+
 		if @album.save
 			redirect_to albums_path
+
 		else
 			render :new
 		end
@@ -22,9 +30,17 @@ class AlbumsController < ApplicationController
 	end
 	def destroy
 	end
+	def date_published
+      created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p")
+    end
 
 	private
 	def album_params
-		params.require(:album).permit(:name, :time_created, :about, photos_attributes: [:caption, :time, :image])
+		params.require(:album).permit(:name, :time_of_trip, :about, :user)
+	end
+
+	private
+	def photo_params
+		params.require(:album).require(:photo).permit(:caption, :image)
 	end
 end

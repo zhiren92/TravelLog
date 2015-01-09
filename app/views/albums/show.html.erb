@@ -1,5 +1,12 @@
 <%= @album.name %>
-<%= image_tag @album.photos.first %>
+<%= image_tag @album.photos[0].image %>
+
+<%= @album.photos[0].caption %>
 
 <%= link_to "ALL ALBUMS", albums_path %>
 
+
+
+<%= image_tag test_album.photos[0].image %>
+
+<%= debug(params) %>

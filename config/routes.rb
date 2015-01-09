@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'users#new'
+  root 'users#index'
   resources :albums
   resources :users 
   get '/signup' => 'users#new'
