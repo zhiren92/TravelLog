@@ -42,6 +42,8 @@ group :development do
 end
 
 gem 'quiet_assets'
+
+gem 'figaro'
 # Use unicorn as the app server
 # gem 'unicorn'
 

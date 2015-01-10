@@ -12,8 +12,9 @@ class AlbumsController < ApplicationController
 	end
 	def create
 		@album = Album.new(album_params)
-		@album.photos.build(photo_params)
+		# @album.photos.build(photo_params)
 		@album.user = current_user
+		photo_params[:image].each {|p| @album.photos.new(image: p)}
 		# @album = current_user.albums.new(albums_params)
 
 
@@ -41,6 +42,6 @@ class AlbumsController < ApplicationController
 
 	private
 	def photo_params
-		params.require(:album).require(:photo).permit(:caption, :image)
+		params.require(:album).require(:photo).permit(:caption, :image => [])
 	end
 end

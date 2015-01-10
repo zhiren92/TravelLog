@@ -1,6 +1,6 @@
-<h1>This is the Page for all Albums</h1>
+<h1>This is the Page for all your Albums</h1>
 
-<% @albums.each do |album| %>
+<% current_user.albums.each do |album| %>
 	<div>
 		<%= link_to album.name, album_path(album) %>
 	</div>
