@@ -4,8 +4,14 @@
 
 			<% if logged_in? %>
 			  <button type="button" class="btn btn-default","col-md-1"><%= link_to 'Home', users_path %></button>
-			  
+			   
+			  <button type="button" class="btn btn-default","col-md-1"><%= link_to 'Your Profile', user_path(current_user) %></button>			  
 			  <button type="button" class="btn btn-default","col-md-1"><%= link_to 'Your Albums', albums_path %></button>
+
+			   <button type="button" class="btn btn-default","col-md-1"><%= link_to 'Edit Profile', edit_user_path(current_user) %></button>
+
+			  
+
 			<% else %>
 			  <button type="button" class="btn btn-default","col-md-1"><%= link_to 'Home', users_path %></button>
 			<% end %>
