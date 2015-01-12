@@ -1,13 +1,26 @@
-<%= @album.name %>
-<%= image_tag @album.photos[0].image %>
+<%= render "shared/nav" %>
 
-
-<%= @album.photos[0].caption %>
-
-<%= link_to "ALL ALBUMS", albums_path %>
+	<div class="jumbotron">
 
 
 
-<%= image_tag test_album.photos[0].image %>
+			<div class="album-name">
+				<h1><%= @album.name %></h1>
+			</div>
+			<div>
+				<%= @album.about %>
+			</div>
 
-<%= debug(params) %>
+			<% @album.photos.each do |photo| %>
+				<%= link_to (image_tag photo.image.url(:default)), album_photo_path(@album, photo) %>
+			<% end %>
+			<div>
+			<button class="createalbum .col-md-1"><%= link_to "Back", albums_path %></button>
+			</div>
+
+	</div>
+
+
+
+
+

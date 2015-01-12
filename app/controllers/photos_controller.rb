@@ -3,6 +3,8 @@ class PhotosController < ApplicationController
 		@photos = Photo.all
 	end
 	def show
+		album = Album.find(params[:album_id])
+		@photo = album.photos.find_by(params[:photo_id])
 	end
 	def new
 		@photo = Photo.new
@@ -16,6 +18,6 @@ class PhotosController < ApplicationController
 	end
 
 	def photo_params
-		params.require(:photo).permit(:caption, :time, :image)
+		params.require(:photo).permit(:caption, :image)
 	end
 end

@@ -2,3 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.errors
+{
+	list-style-type: none;
+}
+
+.add-photo
+{
+	text-align:center;
+	display:inline-block;
+}
+
+.createalbum
+{
+	font-size:150%;
+	padding: 10px 15px;
+    background: #4479BA;
+    color: #FFF;
+}
+.album-name
+{
+	font-family: 'Indie Flower', cursive;
+	
+
+}

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   root 'users#index'
-  resources :albums
-  resources :users 
+  resources :users
+  resources :albums do
+    resources :photos
+  end
   get '/signup' => 'users#new'
 
   get '/login' => 'sessions#new'

@@ -1,33 +1,43 @@
-<h1>CREATE A NEW ALBUM</h1>
+<%= render "shared/nav" %>
 
-<%= form_for @album do |f| %>
-	<div>
-		<%= f.label :name%>
-		<%= f.text_field :name %>
-	</div>
-	<div>
-		<%= f.label :date_of_event%>
-		<%= f.date_field :date_of_event %>
-	</div>
-	<div>
-		<%= f.label :about %>
-		<%= f.text_area :about  %>
-	</div>
+<div class="jumbotron">
 
-<h3>Add Photos</h3>
+	<div class="newalbum">
+		<h1>CREATE A NEW ALBUM</h1>
 
-	<%= f.fields_for @album.photos do |photo_fields| %>
-		<div>
-			<%= photo_fields.file_field :image, multiple: true %>
-		</div>
-		<div>
-			<%= photo_fields.label :caption %>
-			<%= photo_fields.text_field :caption %>
-		</div>
-	<% end %>
-	
+		<%= form_for @album do |f| %>
 
-	<div>
-		<%= f.submit "Create Your Album" %>
+			<div>
+				<%= f.label :name%>
+				<%= f.text_field :name %>
+			</div>
+			<div>
+				<%= f.label :date_of_event%>
+				<%= f.date_field :date_of_event %>
+			</div>
+			<div>
+				<%= f.label :about %>
+				<%= f.text_area :about  %>
+			</div>
+
+			<div class="add-photo">
+				<h3>Add Photos</h3>
+
+				<%= f.fields_for @album.photos do |photo_fields| %>
+					<div>
+						<%= photo_fields.file_field :image, multiple: true %>
+					</div>
+					<div>
+						<%= photo_fields.label :caption %>
+						<%= photo_fields.text_field :caption %>
+					</div>
+				<% end %>
+				
+			</div>
+
+			<div>
+				<%= f.submit "Create Your Album" %>
+			</div>
+		<% end %>
 	</div>
-<% end %>
+</div>

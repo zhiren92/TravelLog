@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
 	def index	
 		@albums = Album.all
+
 	end
 	def show
 		@album = Album.find(params[:id])
@@ -9,6 +10,7 @@ class AlbumsController < ApplicationController
 		@album = Album.new
 		# @album = current_user.album
 		@album.photos.build
+
 	end
 	def create
 		@album = Album.new(album_params)

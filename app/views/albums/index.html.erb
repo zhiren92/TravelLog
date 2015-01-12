@@ -1,15 +1,17 @@
 <%= render "shared/nav" %>
 
-<h1>Your Adventures</h1>
 
+<div class="jumbotron">
 
+	<h1>Your Adventures</h1>
 
-	<div>
-		<% current_user.albums.each do |album| %>
-			<div>
-				<%= link_to album.name, album_path(album) %>
-			</div>
-		<% end %>
-	</div>
+		<div>
+			<% current_user.albums.each do |album| %>
+				<div>
+					<%= link_to album.name, album_path(album) %>
+				</div>
+			<% end %>
+		</div>
 
-<button><%= link_to "Create New Album", new_album_path %></h2></button>
+	<button class="createalbum"><%= link_to "Create New Album", new_album_path %></h2></button>
+</div>
