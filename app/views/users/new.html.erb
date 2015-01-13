@@ -1,6 +1,6 @@
 <%= render "shared/nav" %>
 
-<div class="jumbotron">
+<div class="jumbotron row text-center">
 	<h1>Signup</h1>
 
 	<ul class="errors">
@@ -10,26 +10,31 @@
 	  <% end %>
 
 	</ul>
-
-	<%= form_for @user do |f| %>
-		<div>
-			<%= f.label :name %>
-			<%= f.text_field :name %>
-		</div>
-		<div>
-			<%= f.label :email %>
-			<%= f.text_field :email %>
-		</div>
-		<div>
-			<%= f.label :password %>
-			<%= f.password_field :password %>
-		</div>
-		<div>
-			<%= f.label :password_confirmation %>
-			<%= f.password_field :password_confirmation %>
-		</div>
-		<div>
-			<%= f.submit "SIGN UP" %>
-		</div>
-	<% end %>
+	<div class="add-photo">
+		<%= form_for @user do |f| %>
+			<div>
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+			</div>
+			<div>
+				<%= f.label :email %>
+				<%= f.text_field :email %>
+			</div>
+			<div>
+				<%= f.label :password %>
+				<%= f.password_field :password %>
+			</div>
+			<div>
+				<%= f.label :password_confirmation %>
+				<%= f.password_field :password_confirmation %>
+			</div>
+			<div >
+				<%= f.label :avatar %>
+				<%= f.file_field :avatar %>
+			</div>
+			<div>
+				<%= f.submit "SIGN UP" %>
+			</div>
+		<% end %>
+	</div>
 </div>

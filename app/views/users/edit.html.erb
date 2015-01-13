@@ -10,7 +10,6 @@
 	 	</p>
 	 <% end %>
 
-	<div><%= image_tag @user.image.url  %></div>
 	<div class="add-photo">
 		<%= form_for @user do |f| %>
 			<div>
@@ -30,7 +29,7 @@
 				<%= f.password_field :password_confirmation %>
 			</div>
 			<div>
-				<%= f.label :avatar, "Add a display picture" %>
+				<%= f.label :avatar, "Change display picture" %>
 				<%= f.file_field :avatar %>
 			</div>
 			<div>

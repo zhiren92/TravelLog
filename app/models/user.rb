@@ -6,7 +6,7 @@ class User
   field :password_digest, type: String
   attr_reader :password
 
-  mount_uploader :image, AvatarUploader
+  mount_uploader :avatar, AvatarUploader
 
   has_many :albums
 

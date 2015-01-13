@@ -31,6 +31,11 @@ class PhotosController < ApplicationController
 	def destroy
 		@album = Album.find(params[:album_id])
 		@photo = @album.photos.find(params[:id])
+		if @photo.destroy
+			redirect_to album_path(@album)
+		else
+			render "edit"
+		end
 	end
 
 	def photo_params

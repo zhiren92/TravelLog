@@ -7,8 +7,14 @@
 
 	<div><%= @photo.caption %></div>
 
-	<div>
-		<button><%= link_to "Add Caption!", edit_album_photo_path %></button>
-	</div>
+	<% if !@photo.caption %>
+		<div>
+			<button><%= link_to "Add Caption!", edit_album_photo_path %></button>
+		</div>
+	<% else %>
+			<button><%= link_to "Edit Caption!", edit_album_photo_path %></button>
+	<% end %>
+
+		<button><%= link_to "Delete this Photo", :album_photo, method: :delete, :confirm => "You sure?" %></button>
 
 </div>

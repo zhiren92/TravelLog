@@ -1,13 +1,13 @@
 <%= render "shared/nav" %>
 
 <div class = "jumbotron">
-	<%=form_for @user do |f| %>
-	<% end %>
-	<%= image_tag @user.image.url %>
+
+	<%= image_tag @user.avatar.url(:thumb) %>
 
 	<div><%= current_user.name %></div>
 	<div><%= current_user.email %></div>
-	<div>You have <%= current_user.albums.length %> of album(s)</div>
+	<div>You have been on <%= current_user.albums.length %> adventure(s)</div>
+	
 
 </div>
 
