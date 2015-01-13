@@ -1,5 +1,14 @@
 <%= render "shared/nav" %>
 
 <div class="jumbotron">
-<%= image_tag @photo.image.url(:default) %>
+
+
+	<div><%= image_tag @photo.image.url(:default) %></div>
+
+	<div><%= @photo.caption %></div>
+
+	<div>
+		<button><%= link_to "Add Caption!", edit_album_photo_path %></button>
+	</div>
+
 </div>

@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
 	end
 	def show
 		album = Album.find(params[:album_id])
-		@photo = album.photos.find_by(params[:photo_id])
+		@photo = album.photos.find(params[:id])
 	end
 	def new
 		@photo = Photo.new
@@ -14,7 +14,23 @@ class PhotosController < ApplicationController
 		photo = album.photo.create(photo_params)
 		redirect_to album_path(photo.album)
 	end
+	def edit
+		@album = Album.find(params[:album_id])
+		@photo = @album.photos.find(params[:id])
+
+	end
+	def update
+		@album = Album.find(params[:album_id])
+		@photo = @album.photos.find(params[:id])
+		if @photo.update_attributes(photo_params)
+			redirect_to album_photo_path
+		else
+			render "edit"
+		end
+	end
 	def destroy
+		@album = Album.find(params[:album_id])
+		@photo = @album.photos.find(params[:id])
 	end
 
 	def photo_params

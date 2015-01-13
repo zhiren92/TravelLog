@@ -7,5 +7,7 @@
 
 	<div><%= current_user.name %></div>
 	<div><%= current_user.email %></div>
-	<div>You have <%=  %> of albums</div>
+	<div>You have <%= current_user.albums.length %> of album(s)</div>
+
 </div>
+

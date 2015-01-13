@@ -1,0 +1,20 @@
+<%= render "shared/nav" %>
+
+<div class="jumbotron">
+	<%= image_tag @photo.image.url(:default) %>
+
+	<div>
+		<%= form_for [@album, @photo] do |f| %>
+			<div>
+				<%= f.label :caption %>
+			</div>
+			<div>
+				<%= f.text_area :caption %>
+			</div>
+			<div>
+				<%= f.submit :submit %>
+			</div>
+		<% end %>
+	</div>
+
+</div>
