@@ -16,5 +16,6 @@
 	<% end %>
 
 		<button><%= link_to "Delete this Photo", :album_photo, method: :delete, data:{ confirm: "Are you sure?"} %></button>
+		<button><%= link_to "Back to Album", album_path(@album) %></button>
 
 </div>
