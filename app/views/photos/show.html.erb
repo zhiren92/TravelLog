@@ -15,6 +15,6 @@
 			<button><%= link_to "Edit Caption!", edit_album_photo_path %></button>
 	<% end %>
 
-		<button><%= link_to "Delete this Photo", :album_photo, method: :delete, :confirm => "You sure?" %></button>
+		<button><%= link_to "Delete this Photo", :album_photo, method: :delete, data:{ confirm: "Are you sure?"} %></button>
 
 </div>

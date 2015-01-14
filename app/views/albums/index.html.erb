@@ -4,13 +4,20 @@
 <div class="jumbotron">
 
 	<h1><%= current_user.name %>'s Adventures</h1>
-
+		
 		<div>
 			<% current_user.albums.each do |album| %>
-				<div>
-					<%= link_to album.name, album_path(album) %>
-				</div>
-			<% end %>
+				
+					<div><%= link_to album.name, album_path(album) %></div>
+
+						<% if !album.photos.empty? %>
+							<div><%=link_to (image_tag album.photos[0].image.url(:default)), album_path(album) %></div>	
+						<% end %>
+			
+					<div><%= album.about %></div>
+	
+			<%end%>
+
 		</div>
 
 	<button class="createalbum"><%= link_to "Create New Album", new_album_path %></h2></button>

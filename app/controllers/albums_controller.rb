@@ -8,16 +8,13 @@ class AlbumsController < ApplicationController
 	end
 	def new
 		@album = Album.new
-		# @album = current_user.album
 		@album.photos.build
 
 	end
 	def create
 		@album = Album.new(album_params)
-		# @album.photos.build(photo_params)
 		@album.user = current_user
 		photo_params[:image].each {|p| @album.photos.new(image: p)}
-		# @album = current_user.albums.new(albums_params)
 
 
 		if @album.save

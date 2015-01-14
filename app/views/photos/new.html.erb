@@ -1,0 +1,17 @@
+<%= render "shared/nav" %>
+
+<div class="jumbotron">
+
+<%= form_for @album, url: album_photos_path(@album), method: 'post' do |f| %>
+		<%= f.fields_for @album.photos do |photo_fields| %>
+			<div>
+				<%= photo_fields.file_field :image, multiple: true %>
+			</div>
+			
+		<% end %>
+		<div>
+			<%= f.submit "submit" %>
+		</div>
+<% end %>
+
+</div>

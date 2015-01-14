@@ -5,7 +5,6 @@ class Album
   field :date_of_event, type: Date
   field :about, type: String
 
-  # mount_uploader :image, PhotoUploader
   embeds_many :photos, cascade_callbacks: true
   belongs_to :user
 

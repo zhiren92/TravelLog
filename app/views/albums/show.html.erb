@@ -15,7 +15,9 @@
 				<%= link_to (image_tag photo.image.url(:default)), album_photo_path(@album, photo) %>
 			<% end %>
 			<div>
-			<button class="createalbum .col-md-1"><%= link_to "Back", albums_path %></button>
+				<button class="createalbum .col-md-1"><%= link_to "Back", albums_path %></button>	
+				<button class="createalbum .col-md-1"><%= link_to "Add Photo", new_album_photo_path(@album) %></button>
+		
 			</div>
 
 	</div>

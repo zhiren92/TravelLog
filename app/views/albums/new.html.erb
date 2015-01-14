@@ -23,13 +23,13 @@
 			<div class="add-photo">
 				<h3>Add Photos</h3>
 
+				
 				<%= f.fields_for @album.photos do |photo_fields| %>
 					<div>
 						<%= photo_fields.file_field :image, multiple: true %>
 					</div>
 			
 				<% end %>
-				
 			</div>
 
 			<div>

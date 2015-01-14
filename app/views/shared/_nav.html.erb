@@ -1,34 +1,40 @@
-<div class="row">
-		<nav class="navbar navbar-inverse">
-			<div class="nav-button-left">
+<!-- Navbar -->
+<nav class="navbar navbar-inverse"> 
 
-			<% if logged_in? %>
-			  <button type="button" class="btn btn-default","col-md-1"><%= link_to 'Home', users_path %></button>
-			   
-			  <button type="button" class="btn btn-default","col-md-1"><%= link_to 'Your Profile', user_path(current_user) %></button>			  
-			  <button type="button" class="btn btn-default","col-md-1"><%= link_to 'Your Albums', albums_path %></button>
+	<!-- Row-fluid -->
+	<div class="container-fluid">
+		 <div class="row"> 
+			<div class="col-md-10 text-left btn-group">
+					
+					  <button type="button" class="btn btn-default btn-lg"><%= link_to 'Home', users_path %></button>
+					
+					<% if logged_in? %>   
 
-			   <button type="button" class="btn btn-default","col-md-1"><%= link_to 'Edit Profile', edit_user_path(current_user) %></button>
+					  <button type="button"
+					  class="btn btn-default btn-lg" role="button"><%= link_to 'Your Profile', user_path(current_user) %></button>			  
+					  <button type="button" class="btn btn-default btn-lg"><%= link_to 'Your Albums', albums_path %></button>
 
-			  
+					  <button type="button" class="btn btn-default btn-lg"><%= link_to 'Edit Profile', edit_user_path(current_user) %></button>
 
-			<% else %>
-			  <button type="button" class="btn btn-default","col-md-1"><%= link_to 'Home', users_path %></button>
-			<% end %>
-
+					<% end %>
+							
+			<!-- End col-md-6 -->
 			</div>
-		<div class="nav-button-right">
 
-				<% if logged_in? %>
+			<div class="col-md-2 text-right">
 
-					<button type="button" class="btn btn-default","col-md-1"><%= link_to 'Log Out', logout_path, method: :delete %></button>
-
+				<% if logged_in? %>   
+					<button type="button" class="btn btn-default btn-lg"><%= link_to 'Log Out', logout_path, method: :delete %></button>
 				<% else %>
+					<button type="button" class="btn btn-default btn-lg",""><%= link_to "SignUp", new_user_path %></button>
+				 	<button type="button" class="btn btn-default btn-lg"><%= link_to 'Log In', login_path  %></button>
+				<% end %>
 
-			
-				  	<button type="button" class="btn btn-default",""><%= link_to "SignUp", new_user_path %></button>
-				 	 <button type="button" class="btn btn-default"><%= link_to 'Log In', login_path  %></button>
+			<!-- End col-md-6 -->	
 			</div>
-		<% end %>
-		</nav>
-</div>
+		</div>
+	<!-- End Row-fluid -->
+	</div>
+
+<!-- End Navbar -->
+</nav>
