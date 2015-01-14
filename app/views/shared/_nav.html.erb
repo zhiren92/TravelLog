@@ -26,8 +26,10 @@
 				<% if logged_in? %>   
 					<button type="button" class="btn btn-default btn-lg"><%= link_to 'Log Out', logout_path, method: :delete %></button>
 				<% else %>
-					<button type="button" class="btn btn-default btn-lg",""><%= link_to "SignUp", new_user_path %></button>
-				 	<button type="button" class="btn btn-default btn-lg"><%= link_to 'Log In', login_path  %></button>
+					<div class="row">
+					<button type="button" class="btn btn-default btn-lg text-left",""><%= link_to "SignUp", new_user_path %></button>
+				 	<button type="button" class="btn btn-default btn-lg text_right"><%= link_to 'Log In', login_path  %></button>
+				 	<div>
 				<% end %>
 
 			<!-- End col-md-6 -->	
