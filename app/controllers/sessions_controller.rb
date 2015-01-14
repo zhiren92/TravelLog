@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 			session[:user_id] = user.id.to_s
 			redirect_to users_path
 		else
+			flash[:fail] = "Log in failed"
 			redirect_to login_path
 		end
 	end

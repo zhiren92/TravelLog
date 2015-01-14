@@ -4,7 +4,11 @@
 
 	<h1>Log in</h1>
 
-	
+	<div>
+	<% if flash[:fail] %>
+		<div class="notice"><%= flash[:fail] %></div>
+	<% end %>
+	<div>
 
 	<%= form_for :login do |f| %>
 		<div>
@@ -19,4 +23,5 @@
 			<%= f.submit "Log In" %>
 		</div>
 	<% end %>
+
 </div>
